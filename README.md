@@ -9,6 +9,9 @@ Data Analytics AI Agent (DAAA) is an intelligent analytics assistant designed to
 - **Retail Intelligence**: Specifically tuned for the "Superstore" schema, covering orders, products, customers, and regional performance.
 - **Actionable Insights**: Provides suggested follow-up questions to help you dive deeper into the data.
 
+<img width="1440" height="776" alt="image" src="https://github.com/user-attachments/assets/f3de0c63-12c6-4ca4-9447-142ba2bd753c" />
+
+
 ## 🛠️ Prerequisites
 
 Before you begin, ensure you have the following installed:
