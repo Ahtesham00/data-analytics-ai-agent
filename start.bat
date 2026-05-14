@@ -1,6 +1,6 @@
 @echo off
 :: ─────────────────────────────────────────────────────────────────────────────
-:: start.bat  –  Sets up and runs the Superstore AI Chatbot (Windows CMD)
+:: start.bat  –  Sets up and runs the Data Analytics AI Agent (Windows CMD)
 :: ─────────────────────────────────────────────────────────────────────────────
 setlocal EnableDelayedExpansion
 
@@ -15,7 +15,7 @@ set "FRONTEND_PORT=5173"
 
 echo.
 echo ══════════════════════════════════════════════════
-echo   Superstore AI Chatbot  —  Setup ^& Start
+echo   Data Analytics AI Agent  —  Setup ^& Start
 echo ══════════════════════════════════════════════════
 echo.
 

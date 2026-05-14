@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────────────────────
-# start.sh  –  Sets up and runs the Superstore AI Chatbot via Docker (Linux / macOS)
+# start.sh  –  Sets up and runs the Data Analytics AI Agent via Docker (Linux / macOS)
 # ─────────────────────────────────────────────────────────────────────────────
 set -euo pipefail
 
@@ -21,7 +21,7 @@ die()  { echo -e "${RED}[error]${NC} $*" >&2; exit 1; }
 
 echo ""
 echo -e "${BOLD}==================================================${NC}"
-echo -e "${BOLD}  Superstore AI Chatbot - Setup and Start${NC}"
+echo -e "${BOLD}  Data Analytics AI Agent - Setup and Start${NC}"
 echo -e "${BOLD}==================================================${NC}"
 echo ""
 

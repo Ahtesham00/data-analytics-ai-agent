@@ -1,7 +1,7 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-    Sets up and runs the Superstore AI Chatbot via Docker.
+    Sets up and runs the Data Analytics AI Agent via Docker.
 .DESCRIPTION
     Builds the Docker image, seeds the database, and streams logs here.
     If a frontend/ directory exists, starts its dev server in a new window.
@@ -30,7 +30,7 @@ Set-Location $Root
 
 Write-Host ""
 Write-Host "==================================================" -ForegroundColor Magenta
-Write-Host "  Superstore AI Chatbot - Setup and Start"         -ForegroundColor Magenta
+Write-Host "  Data Analytics AI Agent - Setup and Start"         -ForegroundColor Magenta
 Write-Host "==================================================" -ForegroundColor Magenta
 Write-Host ""
 

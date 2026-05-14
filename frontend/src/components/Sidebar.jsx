@@ -50,11 +50,10 @@ function ConversationItem({ conv, isActive, onSelect, onDelete, onRename }) {
       onClick={() => !editing && onSelect(conv.conversation_id)}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
-      className={`group flex items-center gap-2 px-3 py-2.5 rounded-lg cursor-pointer transition-colors ${
-        isActive
+      className={`group flex items-center gap-2 px-3 py-2.5 rounded-lg cursor-pointer transition-colors ${isActive
           ? 'bg-slate-700 text-white'
           : 'hover:bg-slate-800 text-slate-400 hover:text-slate-200'
-      }`}
+        }`}
     >
       <MessageSquare size={14} className="flex-shrink-0" />
 
@@ -155,7 +154,7 @@ export default function Sidebar({
         <div className="w-7 h-7 rounded-lg bg-indigo-900/60 flex items-center justify-center flex-shrink-0">
           <BarChart2 size={14} className="text-indigo-400" />
         </div>
-        <span className="flex-1 font-semibold text-sm text-white truncate">Superstore AI</span>
+        <span className="flex-1 font-semibold text-sm text-white truncate">Data Analytics AI Agent</span>
         <button
           onClick={() => setCollapsed(true)}
           className="text-slate-600 hover:text-slate-300 transition-colors"

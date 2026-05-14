@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-    "name": "Superstore AI Chatbot API",
+    "name": "Data Analytics AI Agent Chatbot API",
     "description": "Flask API routes from `app/__init__.py`, `app/routes/conversations.py`, and `app/routes/chat.py`. Default base URL matches Docker (`localhost:5000`).",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
