@@ -1,0 +1,136 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "Superstore AI Chatbot API",
+    "description": "Flask API routes from `app/__init__.py`, `app/routes/conversations.py`, and `app/routes/chat.py`. Default base URL matches Docker (`localhost:5000`).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    },
+    {
+      "key": "conversationId",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Health check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/health",
+            "description": "Returns `{\"status\": \"ok\"}`."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Conversations",
+      "item": [
+        {
+          "name": "Create conversation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"provider\": \"anthropic\"\n}"
+            },
+            "url": "{{baseUrl}}/api/conversations",
+            "description": "`provider` is optional (default `anthropic`). Returns 201 with conversation payload including `conversation_id`."
+          },
+          "response": []
+        },
+        {
+          "name": "List conversations",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/conversations",
+            "description": "Returns all conversations."
+          },
+          "response": []
+        },
+        {
+          "name": "Get conversation",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/conversations/{{conversationId}}",
+            "description": "Returns conversation with `messages`. Set collection variable `conversationId` or replace path segment. 404 if not found."
+          },
+          "response": []
+        },
+        {
+          "name": "Update conversation",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"provider\": \"anthropic\",\n  \"title\": \"My chat\"\n}"
+            },
+            "url": "{{baseUrl}}/api/conversations/{{conversationId}}",
+            "description": "Optional fields: `provider`, `title`. 404 if conversation not found."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete conversation",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/conversations/{{conversationId}}",
+            "description": "Returns `{\"deleted\": true}`. 404 if not found."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Chat",
+      "item": [
+        {
+          "name": "Chat (SSE stream)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/event-stream"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"What were total sales last quarter?\",\n  \"provider\": \"anthropic\"\n}"
+            },
+            "url": "{{baseUrl}}/api/chat/{{conversationId}}",
+            "description": "Streams Server-Sent Events (`text/event-stream`). `message` is required. `provider` defaults to `anthropic`. Use a valid `conversationId` from create conversation."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
